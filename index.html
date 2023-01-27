@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API URL Generator</title>
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/e4767c28d7.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.ico">
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary myNavbar">
+        <div class="container-fluid">
+            <a class="navbar-brand celHead" href="#">Celebrity API</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link myLink all" href="#">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myLink random" href="#">Random</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myLink search" href="#">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myLink add" href="#">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myLink update" href="#">Update</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myLink change" href="#">Change</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myLink delete" href="#">Remove</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- API DOCUMENTATION SECTION -->
+    <div class="docsInfo">
+        <p>
+            The Celebrity REST API provides a completely free JSON data about famous actors and actresses, which
+            can be used in different programming projects. To retrieve information User does not need any API KEY,
+            but if user wants to update or delete existing data from Celebrity Database, then he/she has to provide 
+            API KEY which is also available for free.
+        </p>
+    </div>
+    <div class="docsDiv">
+        <a class="docsLink" href="https://documenter.getpostman.com/view/25457791/2s8ZDcyzUY" target="_blank">VIEW REST API DOCUMENTATION</a>
+    </div>
+
+    <!-- PARAMETERS SECTION -->
+    <div class="parameterDiv">
+        <!-- Internal Section For All Request -->
+        <div class="allDiv">
+            <div class="answerDiv d-flex justify-content-between align-items-center">
+                <p class="urlP">API URL</p>
+                <p class="answerLink1"></p>
+                <button id="allButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Internal Section For Random Request -->
+        <div class="randomDiv">
+            <div class="answerDiv d-flex justify-content-between align-items-center">
+                <p class="urlP">API URL</p>
+                <p class="answerLink2"></p>
+                <button id="randomButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Internal Section For Search Request -->
+        <div class="searchDiv">
+            <div class="comboDiv">
+                <p class="categoryP fw-bold">Select Category:</p>
+                <select class="combo">
+                    <option value="first_name">First Name</option>
+                    <option value="last_name">Last Name</option>
+                    <option value="gender">Gender</option>
+                    <option value="age">Age</option>
+                    <option value="movie_genre">Movie Genre</option>
+                    <option value="followers">Followers Quantity</option>
+                    <option value="id">ID</option>
+                </select>
+            </div>
+            <div class="comboDiv">
+                <p class="categoryP fw-bold">Select Comparison Operator for Age or Followers Quantity - ONLY!:</p>
+                <select class="combo comparison">
+                    <option value="=">=</option>
+                    <option value=">">></option>
+                    <option value="<"><</option>
+                    <option value="<="><=</option>
+                    <option value=">=">>=</option>
+                </select>
+            </div>
+            <div class="answerDiv d-flex justify-content-between align-items-center mt-4">
+                <p class="urlP">API URL</p>
+                <p class="answerLink3"></p>
+                <button id="searchButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Internal Section For Add Request -->
+        <div class="addDiv">
+            <div class="dictDiv">
+                <p>{</p>
+                    <p class="dict">"first_name": "Tom",</p>
+                    <p class="dict">"last_name": "Cruise",</p>
+                    <p class="dict">"gender": "Male",</p>
+                    <p class="dict">"age": 47,</p>
+                    <p class="dict">"movie_genre": "Action",</p>
+                    <p class="dict">"followers": 150000,</p>
+                    <p class="dict">"img_url": "https://hollywoodlife.com/wp-content/uploads/2022/03/tom-cruise-applaud-mega-vert.jpg"</p>
+                <p>}</p>
+            </div>
+            <div class="answerDiv d-flex justify-content-between align-items-center">
+                <p class="urlP">API URL</p>
+                <p class="answerLink4"></p>
+                <button id="addButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Internal Section For Update Request -->
+        <div class="updateDiv">
+            <div class="comboDiv">
+                <p class="categoryP fw-bold">Select Category:</p>
+                <select class="combo1">
+                    <option value="first_name">First Name</option>
+                    <option value="last_name">Last Name</option>
+                    <option value="gender">Gender</option>
+                    <option value="age">Age</option>
+                    <option value="movie_genre">Movie Genre</option>
+                    <option value="followers">Followers Quantity</option>
+                    <option value="img_url">Img Url</option>
+                </select>
+            </div>
+            <div class="answerDiv d-flex justify-content-between align-items-center">
+                <p class="urlP">API URL</p>
+                <p class="answerLink5"></p>
+                <button id="updateButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Internal Section For Change Request -->
+        <div class="changeDiv">
+            <div class="answerDiv d-flex justify-content-between align-items-center">
+                <p class="urlP">API URL</p>
+                <div id="changeID" class="answerLink6"></div>
+                <button id="changeButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Internal Section For Delete Request -->
+        <div class="deleteDiv">
+            <div class="answerDiv d-flex justify-content-between align-items-center">
+                <p class="urlP">API URL</p>
+                <div class="answerLink7"></div>
+                <button id="removeButton" class="copyButton"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <!-- Identifier Symbol -->
+        <div class="identify d-flex justify-content-center align-items-center">
+            <span class="chosenRequest">Begin</span>
+        </div>
+    </div>
+
+    <!-- GENERATE API URL SECTION -->
+    <div class="generateDiv">
+        <button class="generateButton">GENERATE API URL</button>
+    </div>
+
+    <!-- Bootstrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Google jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- External Javascript -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
